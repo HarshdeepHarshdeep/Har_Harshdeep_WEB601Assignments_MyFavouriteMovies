@@ -1,8 +1,8 @@
-interface Content{
+export interface Content{
     id: number;
     title:string;
     description: string;
-    Creator:String;
+    creator:String;
     imageUrl: string;
     type:string;
     tags:string;
