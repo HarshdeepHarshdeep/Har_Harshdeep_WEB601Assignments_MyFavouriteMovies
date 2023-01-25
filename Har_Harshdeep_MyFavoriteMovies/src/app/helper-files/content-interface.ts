@@ -3,9 +3,9 @@ export interface Content{
     title:string;
     description: string;
     creator:String;
-    imageUrl: string;
-    type:string;
-    tags:string;
+    imageUrl?: string;
+    type?:string;
+    tags?:string;
     }
 
   
