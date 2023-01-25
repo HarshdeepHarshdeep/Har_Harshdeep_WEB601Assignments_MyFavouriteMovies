@@ -1,8 +1,11 @@
 interface Content{
     id: number;
-    title:string
+    title:string;
     description: string;
-    Creator:String
+    Creator:String;
     imageUrl: string;
-    body: string;
+    type:string;
+    tags:string;
     }
+
+  
