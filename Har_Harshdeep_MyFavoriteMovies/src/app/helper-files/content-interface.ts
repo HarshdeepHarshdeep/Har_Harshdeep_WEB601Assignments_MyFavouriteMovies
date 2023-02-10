@@ -6,6 +6,8 @@ export interface Content{
     imageUrl?: string;
     type?:string;
     tags?:string;
+    color?:string;
+    publisher?:string;
     }
 
   
