@@ -1,3 +1,43 @@
-<div *ngFor="let content of contents | slice:0:5">
-    <div [innerHTML]="getContentDetails(contents.indexOf(content))"></div>
+<input type="text" [(ngModel)]="titleSearch">
+<button (click)="SearchTitle()">Search</button>
+
+
+<p *ngIf="titleMatched !== null" >
+    <span [style.color]="titleMatched ? 'green' : 'red'">
+        {{titleMatched ? 'Title Found' : 'Title NOt Found'}}
+    </span>
+</p>
+
+<br> <hr> <br>
+
+<h1>Without Type</h1>
+<div *ngFor="let content of contents | filterContentType" class="noType">
+    <h2>{{content.title}}</h2>
+    <p>{{content.description}}</p>
+    <p>Creator: {{content.creator}}</p>
+    <p>Type: {{content.type}}</p>
+    <img (click)="logIdTitle(content)" [src]="content.imageUrl">
+</div>
+
+<br> <hr> <br>
+
+<h1>Action Type</h1>
+<div *ngFor="let content of contents | filterContentType:'Action'" class="Action">
+    <h2>{{content.title}}</h2>
+    <p>{{content.description}}</p>
+    <p>Creator: {{content.creator}}</p>
+    <p>Type: {{content.type}}</p>
+    <img (click)="logIdTitle(content)" [src]="content.imageUrl">
+</div>
+
+
+<br> <hr> <br>
+
+<h1>Drama Type</h1>
+<div *ngFor="let content of contents | filterContentType:'Action'" class="Drama">
+    <h2>{{content.title}}</h2>
+    <p>{{content.description}}</p>
+    <p>Creator: {{content.creator}}</p>
+    <p>Type: {{content.type}}</p>
+    <img (click)="logIdTitle(content)" [src]="content.imageUrl">
 </div>

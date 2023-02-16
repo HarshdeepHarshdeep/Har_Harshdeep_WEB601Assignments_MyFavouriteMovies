@@ -5,7 +5,7 @@ export interface Content{
     creator:String;
     imageUrl?: string;
     type?:string;
-    tags?:string;
+    tags?:string[];
     color?:string;
     publisher?:string;
     }

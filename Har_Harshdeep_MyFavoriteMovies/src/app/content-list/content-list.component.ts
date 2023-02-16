@@ -8,6 +8,16 @@ import { Content } from "../helper-files/content-interface";
 })
 export class ContentListComponent {
   contents: Content[];
+  titleSearch:string = '';
+  titleMatched: boolean | null = null;
+
+  logIdTitle(card: any){
+    console.log(`${card.id}, ${card.title}`);
+  }
+  SearchTitle(){
+    console.log(this.titleSearch);
+    this.titleMatched = this.contents.some(content => content.title === this.titleSearch);
+  }
 
     constructor(){
         this.contents = [
@@ -49,7 +59,7 @@ export class ContentListComponent {
             description: "hor is a 2011 American superhero film based on the Marvel Comics character of the same name. Produced by Marvel Studios and distributed by Paramount Pictures,[a] it is the fourth film in the Marvel Cinematic Universe (MCU).",
             creator: "Marvel",
             imageUrl: "https://upload.wikimedia.org/wikipedia/en/9/95/Thor_%28film%29_poster.jpg",
-            type: "Action",
+            type: "Drama",
             color:"black",
             publisher:"sf"
 
@@ -60,7 +70,6 @@ export class ContentListComponent {
             description: "Iron Man is a superhero appearing in American comic books published by Marvel Comics. The character was co-created by writer and editor Stan Lee, developed by scripter Larry Lieber, and designed by artists Don Heck and Jack Kirby.",
             creator: "Marvel",
             imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/4/47/Iron_Man_%28circa_2018%29.png/220px-Iron_Man_%28circa_2018%29.png",
-            type: "Action",
             color:"red",
             publisher:"df"
           },
@@ -70,7 +79,7 @@ export class ContentListComponent {
             description: "Spider-Man is a superhero appearing in American comic books published by Marvel Comics. Created by writer-editor Stan Lee and artist Steve Ditko, he first appeared in the anthology comic book Amazing Fantasy #15 (August 1962) in the Silver Age of Comic Books.",
             creator: "Marvel",
             imageUrl: "https://upload.wikimedia.org/wikipedia/en/2/21/Web_of_Spider-Man_Vol_1_129-1.png",
-            type: "Action",
+            type: "Drama",
             color:"white",
             publisher:"dsg"
 
@@ -78,12 +87,4 @@ export class ContentListComponent {
         ];
     }
 
-    getContentDetails(index: number){
-      let content = this.contents[index];
-      return `<h2>${content.title}</h2>
-              <p>${content.description}</p>
-              <p>Creator: ${content.creator}</p>
-              <p>Type: ${content.type}</p>
-              <img src="${content.imageUrl}">`;
-    }
 }
