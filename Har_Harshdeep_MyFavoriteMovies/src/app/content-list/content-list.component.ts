@@ -8,6 +8,7 @@ import { Content } from "../helper-files/content-interface";
 })
 export class ContentListComponent {
   contents: Content[];
+  defaultImage: string = 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Marvel_Logo.svg/1200px-Marvel_Logo.svg.png';
   titleSearch:string = '';
   titleMatched: boolean | null = null;
 
@@ -26,8 +27,8 @@ export class ContentListComponent {
             title: "The Avengers",
             description: "Marvel's The Avengers or simply The Avengers, is a 2012 American superhero film based on the Marvel Comics superhero team of the same name.",
             creator: "Marvel",
-            imageUrl: "https://upload.wikimedia.org/wikipedia/en/8/8a/The_Avengers_%282012_film%29_poster.jpg",
             type: "Action",
+            tags: ['avenger', 'marvel'],
             color:"red",
             publisher:"as"
 
@@ -38,7 +39,7 @@ export class ContentListComponent {
             description: "Avengers: Age of Ultron is a 2015 American superhero film based on the Marvel Comics superhero team the Avengers.",
             creator: "Marvel",
             imageUrl: "https://upload.wikimedia.org/wikipedia/en/f/ff/Avengers_Age_of_Ultron_poster.jpg",
-            type: "Action",
+            tags: ['avenger', 'ultron'],
             color:"blue",
             publisher:"as"
           },
@@ -47,8 +48,8 @@ export class ContentListComponent {
             title: "Avengers: Infinity War",
             description: "Avengers: Infinity War is a 2018 American superhero film based on the Marvel Comics superhero team the Avengers.",
             creator: "Marvel",
-            imageUrl: "https://upload.wikimedia.org/wikipedia/en/4/4d/Avengers_Infinity_War_poster.jpg",
             type: "Action",
+            tags: ['war', 'all'],
             color:"green",
             publisher:"sd"
 
@@ -60,6 +61,7 @@ export class ContentListComponent {
             creator: "Marvel",
             imageUrl: "https://upload.wikimedia.org/wikipedia/en/9/95/Thor_%28film%29_poster.jpg",
             type: "Drama",
+            tags: ['thunder', 'thor'],
             color:"black",
             publisher:"sf"
 
@@ -70,6 +72,8 @@ export class ContentListComponent {
             description: "Iron Man is a superhero appearing in American comic books published by Marvel Comics. The character was co-created by writer and editor Stan Lee, developed by scripter Larry Lieber, and designed by artists Don Heck and Jack Kirby.",
             creator: "Marvel",
             imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/4/47/Iron_Man_%28circa_2018%29.png/220px-Iron_Man_%28circa_2018%29.png",
+            type: "Drama",
+            tags: ['iron', 'man'],
             color:"red",
             publisher:"df"
           },
@@ -80,6 +84,7 @@ export class ContentListComponent {
             creator: "Marvel",
             imageUrl: "https://upload.wikimedia.org/wikipedia/en/2/21/Web_of_Spider-Man_Vol_1_129-1.png",
             type: "Drama",
+            tags: ['man', 'spider'],
             color:"white",
             publisher:"dsg"
 
