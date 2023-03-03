@@ -11,6 +11,7 @@ export class ContentListComponent {
   defaultImage: string = 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Marvel_Logo.svg/1200px-Marvel_Logo.svg.png';
   titleSearch:string = '';
   titleMatched: boolean | null = null;
+  failedMessage: string = '';
 
   logIdTitle(card: any){
     console.log(`${card.id}, ${card.title}`);
@@ -18,6 +19,21 @@ export class ContentListComponent {
   SearchTitle(){
     console.log(this.titleSearch);
     this.titleMatched = this.contents.some(content => content.title === this.titleSearch);
+  }
+
+  addContent(newInfo: any){
+    const promise = new Promise((resolve, reject) => {
+      this.contents.push(newInfo);
+      this.contents = [...this.contents]
+      resolve(newInfo.title);
+    });
+
+    promise.then(title => {
+      console.log(`Information added successfully, ${title}`);
+      this.failedMessage = '';
+    }).catch(error => {
+      this.failedMessage = "Information not added";
+    });
   }
 
     constructor(){

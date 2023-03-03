@@ -1,1 +1,15 @@
-<p>create-content works!</p>
+<div>
+
+    ID: <br> <input type="number" [(ngModel)]="information.id"> <br> <br>
+    Title: <br> <input type="text" [(ngModel)]="information.title"> <br> <br>
+    Description: <br> <input type="text" [(ngModel)]="information.description"> <br> <br>
+    Creator: <br> <input type="text" [(ngModel)]="information.creator"> <br> <br>
+    imageUrl: <br> <input type="text" [(ngModel)]="information.imgURL"> <br> <br> 
+    Type: <br> <input type="text" [(ngModel)]="information.type"> <br> <br>
+    tags: <br> <input type="text" [(ngModel)]="information.tags"> <br> <br>
+    color: <br> <input type="text" [(ngModel)]="information.color"> <br> <br>
+    publisher: <br> <input type="text" [(ngModel)]="information.publisher"> <br> <br>
+    <div>
+        <button (click)="addContent()">Add Content</button>
+    </div>
+</div>

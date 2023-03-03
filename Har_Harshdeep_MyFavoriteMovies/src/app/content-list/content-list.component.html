@@ -1,3 +1,9 @@
+<app-create-content (createEvent)="addContent($event)">
+  
+</app-create-content>
+<p *ngIf="failedMessage !== ''">{{failedMessage}}</p>
+<br> <hr> <br>
+
 <input type="text" [(ngModel)]="titleSearch">
 <button (click)="SearchTitle()">Search</button>
 
