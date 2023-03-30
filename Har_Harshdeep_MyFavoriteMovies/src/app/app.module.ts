@@ -9,6 +9,10 @@ import { FilterContentTypePipe } from './filter-content-type.pipe';
 import { HoverAffectDirective } from './hover-affect.directive';
 import { MessageComponent } from './message/message.component';
 
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './Services/in-memory-data.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +24,12 @@ import { MessageComponent } from './message/message.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService,{
+      dataEncapsulation: false,
+      delay: 1000
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

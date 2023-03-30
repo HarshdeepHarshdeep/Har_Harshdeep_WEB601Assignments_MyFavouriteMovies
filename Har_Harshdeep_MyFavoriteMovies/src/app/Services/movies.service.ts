@@ -3,17 +3,18 @@ import {Observable, of} from 'rxjs';
 import { Content } from '../helper-files/content-interface';
 import { contents } from '../helper-files/ContentDb';
 import { MessageService } from './message.service';
-
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+ 
 @Injectable({
   providedIn: 'root'
 })
 export class MoviesService {
 
-  constructor(private messageService: MessageService) { }
+  constructor(private http: HttpClient, private messageService: MessageService) { }
 
   getContent(): Observable<Content[]>{
     this.messageService.add("Content array loaded!");
-    return of(contents);
+    return this.http.get<Content[]>('/api/movies');
   }
 
   getContentById(id: number): Observable<any> {
