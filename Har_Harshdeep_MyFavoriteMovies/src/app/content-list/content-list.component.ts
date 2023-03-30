@@ -29,4 +29,11 @@ export class ContentListComponent {
       this.MovieService.getContent().subscribe(content => this.contents = content);
     }
 
+    addContent(newMovie: Content){
+      this.MovieService.addContent(newMovie).subscribe(newMovieFromServer => {
+        this.contents.push(newMovieFromServer);
+        this.contents = [...this.contents];
+      })
+    }
+
 }

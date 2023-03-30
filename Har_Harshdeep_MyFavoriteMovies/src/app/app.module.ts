@@ -12,6 +12,7 @@ import { MessageComponent } from './message/message.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './Services/in-memory-data.service';
+import { ModifyContentComponent } from './modify-content/modify-content.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { InMemoryDataService } from './Services/in-memory-data.service';
     FilterContentTypePipe,
     HoverAffectDirective,
     MessageComponent,
+    ModifyContentComponent,
   ],
   imports: [
     BrowserModule,

@@ -9,12 +9,20 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class MoviesService {
+  private httpOptions = {
+    headers: new HttpHeaders({ "Content-Type": "application/json"})
+  }
 
   constructor(private http: HttpClient, private messageService: MessageService) { }
 
   getContent(): Observable<Content[]>{
     this.messageService.add("Content array loaded!");
     return this.http.get<Content[]>('/api/movies');
+  }
+
+  addContent(newMovie: Content): Observable<Content>{
+    this.messageService.add("New Movie Added");
+    return this.http.post<Content>('/api/movies', newMovie, this.httpOptions);
   }
 
   getContentById(id: number): Observable<any> {
