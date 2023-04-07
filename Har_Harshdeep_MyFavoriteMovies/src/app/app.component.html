@@ -1,20 +1,24 @@
 <div class="firstComp">
-    <h2>{{firstContent.title}}</h2>
-    <p>{{firstContent.description}}</p>
-    <p>Creator: {{firstContent.creator}}</p>
-    <p appHoverAffect>Type: {{firstContent.type}}</p>
+    <mat-card>
+        <mat-card-header>
+            <h2>{{firstContent.title}}</h2>
+        </mat-card-header>
+        <mat-card-content>
+            <p>Creator: {{firstContent.creator}}</p>
+            <p>{{firstContent.description}}</p>
+            <div>
+                Tags: 
+                <p *ngFor="let tag of firstContent.tags" [appHoverAffect]="'bold'">{{tag}}</p>
+            </div>
 
-    <div>
-        Tags: 
-        <p *ngFor="let tag of firstContent.tags" [appHoverAffect]="'bold'">{{tag}}</p>
-    </div>
-
-    <div *ngIf="firstContent.imageUrl; else defaultImg">
-        <img (click)="logIdTitle(firstContent)" [src]="firstContent.imageUrl">
-    </div>
-    <ng-template #defaultImg>
-        <img (click)="logIdTitle(firstContent)" [src]="defaultImage">
-    </ng-template>
+            <div *ngIf="firstContent.imageUrl; else defaultImg">
+                <img (click)="logIdTitle(firstContent)" [src]="firstContent.imageUrl">
+            </div>
+            <ng-template #defaultImg>
+                <img (click)="logIdTitle(firstContent)" [src]="defaultImage">
+            </ng-template>
+        </mat-card-content>
+    </mat-card>
 </div>
 
 <app-content-list></app-content-list>

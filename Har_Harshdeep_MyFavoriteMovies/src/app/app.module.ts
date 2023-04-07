@@ -17,6 +17,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatCardModule} from '@angular/material/card';
+import { NewDialogComponent } from './new-dialog/new-dialog.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +30,7 @@ import {MatInputModule} from '@angular/material/input';
     HoverAffectDirective,
     MessageComponent,
     ModifyContentComponent,
+    NewDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,6 +38,8 @@ import {MatInputModule} from '@angular/material/input';
     HttpClientModule,
     MatButtonModule,
     MatInputModule,
+    MatDialogModule,
+    MatCardModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService,{
       dataEncapsulation: false,
       delay: 1000
