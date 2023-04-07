@@ -4,7 +4,7 @@
 <mat-form-field>
     <input matInput type="text" [(ngModel)]="titleSearch">
 </mat-form-field>
-<button mat-raised-button color="primary" (click)="SearchTitle()">Search</button>
+<button mat-raised-button matTooltip="Search for Movie titles" color="primary" (click)="SearchTitle()">Search</button>
 
 
 <p *ngIf="titleMatched !== null" >
