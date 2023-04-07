@@ -1,9 +1,10 @@
 <br><hr>
 <app-modify-content (createEvent)="addContent($event)"></app-modify-content>
 <hr><br>
-
-<input type="text" [(ngModel)]="titleSearch">
-<button (click)="SearchTitle()">Search</button>
+<mat-form-field>
+    <input matInput type="text" [(ngModel)]="titleSearch">
+</mat-form-field>
+<button mat-raised-button color="primary" (click)="SearchTitle()">Search</button>
 
 
 <p *ngIf="titleMatched !== null" >

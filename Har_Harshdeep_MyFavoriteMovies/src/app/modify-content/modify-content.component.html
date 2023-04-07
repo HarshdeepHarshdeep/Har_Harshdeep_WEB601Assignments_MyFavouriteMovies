@@ -1,13 +1,29 @@
 <div>
-
-    Title: <br> <input type="text" [(ngModel)]="information.title"> <br> <br>
-    Description: <br> <input type="text" [(ngModel)]="information.description"> <br> <br>
-    Creator: <br> <input type="text" [(ngModel)]="information.creator"> <br> <br>
-    imageUrl: <br> <input type="text" [(ngModel)]="information.imgURL"> <br> <br> 
-    Type: <br> <input type="text" [(ngModel)]="information.type"> <br> <br>
-    color: <br> <input type="text" [(ngModel)]="information.color"> <br> <br>
-    publisher: <br> <input type="text" [(ngModel)]="information.publisher"> <br> <br>
+    <mat-form-field>
+        Id: <br> <input matInput type="text" disabled> <br> <br>
+    </mat-form-field>
+    <mat-form-field>
+        Title: <br> <input matInput type="text" [(ngModel)]="information.title"> <br> <br>
+    </mat-form-field>
+    <mat-form-field>
+        Description: <br> <input matInput type="text" [(ngModel)]="information.description"> <br> <br>
+    </mat-form-field>
+    <mat-form-field>
+        Creator: <br> <input matInput type="text" [(ngModel)]="information.creator"> <br> <br>
+    </mat-form-field>
+    <mat-form-field>
+        imageUrl: <br> <input matInput type="text" [(ngModel)]="information.imgURL"> <br> <br>
+    </mat-form-field> 
+    <mat-form-field>
+        Type: <br> <input matInput type="text" [(ngModel)]="information.type"> <br> <br>
+    </mat-form-field>
+    <mat-form-field>
+        color: <br> <input matInput type="text" [(ngModel)]="information.color"> <br> <br>
+    </mat-form-field>
+    <mat-form-field>
+        publisher: <br> <input matInput type="text" [(ngModel)]="information.publisher"> <br> <br>
+    </mat-form-field>
     <div>
-        <button (click)="addContent()">Add Content</button>
+        <button mat-raised-button color="primary" (click)="addContent()">Add Content</button>
     </div>
 </div>
