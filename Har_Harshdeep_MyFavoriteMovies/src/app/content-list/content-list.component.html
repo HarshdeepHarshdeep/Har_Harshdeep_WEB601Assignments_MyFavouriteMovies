@@ -19,11 +19,10 @@
 <div *ngFor="let content of contents | filterContentType" class="noType">
     <mat-card color="primary">
         <mat-card-header>
-            <h2>{{content.title}}</h2>
+            <a routerLink="/list/{{content.id}}"><h2>{{content.title}}</h2></a>
         </mat-card-header>
         <mat-card-content>
             <p>Creator: {{content.creator}}</p>
-            <p>{{content.description}}</p>
             <div>
                 Tags: 
                 <p *ngFor="let tag of content.tags" [appHoverAffect]="'bold'">{{tag}}</p>
@@ -45,11 +44,10 @@
 <div *ngFor="let content of contents | filterContentType:'Action'" class="Action">
     <mat-card>
         <mat-card-header>
-            <h2>{{content.title}}</h2>
+            <a routerLink="/list/{{content.id}}"><h2>{{content.title}}</h2></a>
         </mat-card-header>
         <mat-card-content>
             <p>Creator: {{content.creator}}</p>
-            <p>{{content.description}}</p>
             <div>
                 Tags: 
                 <p *ngFor="let tag of content.tags" [appHoverAffect]="'bold'">{{tag}}</p>
@@ -72,11 +70,10 @@
 <div *ngFor="let content of contents | filterContentType:'Action'" class="Drama">
     <mat-card>
         <mat-card-header>
-            <h2>{{content.title}}</h2>
+            <a routerLink="/list/{{content.id}}"><h2>{{content.title}}</h2></a>
         </mat-card-header>
         <mat-card-content>
             <p>Creator: {{content.creator}}</p>
-            <p>{{content.description}}</p>
             <div>
                 Tags: 
                 <p *ngFor="let tag of content.tags" [appHoverAffect]="'bold'">{{tag}}</p>
